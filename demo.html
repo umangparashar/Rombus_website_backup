@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rombus Design Tokens Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&family=Material+Symbols+Sharp:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 32px;
+        background: #121212;
+        color: #f5f5f5;
+        font-family: "Roboto Flex", sans-serif;
+      }
+
+      h1,
+      h2 {
+        font-family: inherit;
+        font-weight: 600;
+        margin-top: 48px;
+        margin-bottom: 16px;
+      }
+
+      h1:first-of-type {
+        margin-top: 0;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 48px;
+      }
+
+      .sample-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .sample-card {
+        padding: 20px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(6px);
+      }
+
+      .sample-card.dark {
+        background: rgba(0, 0, 0, 0.35);
+      }
+
+      .sample-card p {
+        margin: 0;
+      }
+
+      .button-preview {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .button-preview h3 {
+        margin: 0;
+        font-family: "Roboto Flex", sans-serif;
+        font-weight: 600;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .button-state-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        min-width: 220px;
+      }
+
+      .button-state-card .Content__Caption {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .button-state-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .button-state-grid > div {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .token-name {
+        display: block;
+        margin-top: 12px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #bdbdbd;
+      }
+
+      .swatch {
+        padding: 24px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 120px;
+      }
+
+      .swatch .token-name {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .swatch.light {
+        color: #111;
+      }
+
+      .radius-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+      }
+
+      .radius-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        min-height: 120px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #f0f0f0;
+      }
+
+      .effects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .effect-box {
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      .icons-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        align-items: flex-end;
+      }
+
+      .icons-grid .material-symbols-sharp {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      a {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Rombus Design Tokens Preview</h1>
+      <p class="Content__Body">
+        This demo showcases typography, color, radius, icon, and effect styles
+        defined in <code>styles.css</code> so you can reference them while
+        building new experiences.
+      </p>
+    </header>
+
+    <section class="section">
+      <h2>Typography</h2>
+      <div class="sample-grid">
+        <div class="sample-card">
+          <p class="Hero">Hero Heading</p>
+          <span class="token-name">.Hero</span>
+        </div>
+        <div class="sample-card">
+          <p class="Headings__H1">Heading Level 1</p>
+          <span class="token-name">.Headings__H1</span>
+        </div>
+        <div class="sample-card">
+          <p class="Headings__H2">Heading Level 2</p>
+          <span class="token-name">.Headings__H2</span>
+        </div>
+        <div class="sample-card">
+          <p class="Headings__H3">Heading Level 3</p>
+          <span class="token-name">.Headings__H3</span>
+        </div>
+        <div class="sample-card">
+          <p class="Content__Title">Content Title</p>
+          <span class="token-name">.Content__Title</span>
+        </div>
+        <div class="sample-card">
+          <p class="Content__Body">
+            Content body text gives additional details and supports the primary
+            headlines across the experience.
+          </p>
+          <span class="token-name">.Content__Body</span>
+        </div>
+        <div class="sample-card">
+          <p class="Content__BodySmall">
+            Smaller body text is used for captions, disclaimers, or secondary
+            copy.
+          </p>
+          <span class="token-name">.Content__BodySmall</span>
+        </div>
+        <div class="sample-card">
+          <p class="Content__Button">Primary Button Label</p>
+          <span class="token-name">.Content__Button</span>
+        </div>
+        <div class="sample-card">
+          <p class="Content__Caption">Figure 1. Supporting caption text.</p>
+          <span class="token-name">.Content__Caption</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Color Tokens</h2>
+      <div class="sample-grid">
+        <div class="swatch Neutral__Default light">
+          <span>Neutral Default</span>
+          <span class="token-name">.Neutral__Default</span>
+        </div>
+        <div class="swatch Neutral__SubtleWhite light">
+          <span>Neutral Subtle White</span>
+          <span class="token-name">.Neutral__SubtleWhite</span>
+        </div>
+        <div class="swatch Neutral__LightGrey">
+          <span>Neutral Light Grey</span>
+          <span class="token-name">.Neutral__LightGrey</span>
+        </div>
+        <div class="swatch Neutral__Grey">
+          <span>Neutral Grey</span>
+          <span class="token-name">.Neutral__Grey</span>
+        </div>
+        <div class="swatch Neutral__DarkGrey">
+          <span>Neutral Dark Grey</span>
+          <span class="token-name">.Neutral__DarkGrey</span>
+        </div>
+        <div class="swatch Neutral__Background">
+          <span>Neutral Background</span>
+          <span class="token-name">.Neutral__Background</span>
+        </div>
+        <div class="swatch Neutral__Brand__Default light">
+          <span>Brand Default</span>
+          <span class="token-name">.Neutral__Brand__Default</span>
+        </div>
+        <div class="swatch Neutral__Brand__Light light">
+          <span>Brand Light</span>
+          <span class="token-name">.Neutral__Brand__Light</span>
+        </div>
+        <div class="swatch Neutral__Brand__Dark">
+          <span>Brand Dark</span>
+          <span class="token-name">.Neutral__Brand__Dark</span>
+        </div>
+        <div class="swatch Neutral__Brand__ByzantineBlue">
+          <span>Brand Byzantine Blue</span>
+          <span class="token-name">.Neutral__Brand__ByzantineBlue</span>
+        </div>
+        <div class="swatch Neutral__Brand__IndiaGreen">
+          <span>Brand India Green</span>
+          <span class="token-name">.Neutral__Brand__IndiaGreen</span>
+        </div>
+        <div class="swatch Error__Default">
+          <span>Error Default</span>
+          <span class="token-name">.Error__Default</span>
+        </div>
+        <div class="swatch Error__Light light">
+          <span>Error Light</span>
+          <span class="token-name">.Error__Light</span>
+        </div>
+        <div class="swatch Error__Dark">
+          <span>Error Dark</span>
+          <span class="token-name">.Error__Dark</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Buttons</h2>
+      <p class="Content__Body">
+        The button component combines typography, iconography, and motion tokens
+        defined in <code>styles.css</code>. Interact with the live samples below
+        to explore size, style, and icon placement options.
+      </p>
+      <div class="button-preview">
+        <div class="button-state-card">
+          <p class="Content__Title">Large Buttons</p>
+          <p class="Content__Caption">
+            Icon placements with filled, outlined, and text treatments.
+          </p>
+          <div class="button-row">
+            <button class="Button Button--large Button--filled" type="button">
+              <span class="Button__icon Icons__Medium" aria-hidden="true">bolt</span>
+              <span class="Button__label">Primary</span>
+            </button>
+            <button class="Button Button--large Button--outlined" type="button">
+              <span class="Button__label">Secondary</span>
+            </button>
+            <button class="Button Button--large Button--text" type="button">
+              <span class="Button__label">Tertiary</span>
+              <span class="Button__icon Icons__Medium" aria-hidden="true">
+                arrow_forward
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="button-state-card">
+          <p class="Content__Title">Small Buttons</p>
+          <p class="Content__Caption">
+            Compact controls maintain spacing, typography, and icon sizing.
+          </p>
+          <div class="button-row">
+            <button class="Button Button--small Button--filled" type="button">
+              <span class="Button__icon Icons__Medium" aria-hidden="true">add</span>
+              <span class="Button__label">Create</span>
+            </button>
+            <button class="Button Button--small Button--outlined" type="button">
+              <span class="Button__label">Options</span>
+            </button>
+            <button class="Button Button--small Button--text" type="button">
+              <span class="Button__label">Details</span>
+              <span class="Button__icon Icons__Medium" aria-hidden="true">info</span>
+            </button>
+          </div>
+        </div>
+        <div class="button-state-card">
+          <p class="Content__Title">State Reference</p>
+          <p class="Content__Caption">
+            Static previews of default, hover, pressed, and disabled states.
+          </p>
+          <div class="button-state-grid">
+            <div>
+              <span class="Content__Caption">Filled · Default</span>
+              <button class="Button Button--large Button--filled" type="button">
+                <span class="Button__label">Default</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Filled · Hover</span>
+              <button
+                class="Button Button--large Button--filled"
+                type="button"
+                data-state="hover"
+              >
+                <span class="Button__label">Hover</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Filled · Pressed</span>
+              <button
+                class="Button Button--large Button--filled"
+                type="button"
+                data-state="pressed"
+              >
+                <span class="Button__label">Pressed</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Filled · Disabled</span>
+              <button class="Button Button--large Button--filled" type="button" disabled>
+                <span class="Button__label">Disabled</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Outlined · Default</span>
+              <button class="Button Button--large Button--outlined" type="button">
+                <span class="Button__label">Default</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Outlined · Hover</span>
+              <button
+                class="Button Button--large Button--outlined"
+                type="button"
+                data-state="hover"
+              >
+                <span class="Button__label">Hover</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Outlined · Pressed</span>
+              <button
+                class="Button Button--large Button--outlined"
+                type="button"
+                data-state="pressed"
+              >
+                <span class="Button__label">Pressed</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Outlined · Disabled</span>
+              <button class="Button Button--large Button--outlined" type="button" disabled>
+                <span class="Button__label">Disabled</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Text · Default</span>
+              <button class="Button Button--large Button--text" type="button">
+                <span class="Button__label">Default</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Text · Hover</span>
+              <button
+                class="Button Button--large Button--text"
+                type="button"
+                data-state="hover"
+              >
+                <span class="Button__label">Hover</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Text · Pressed</span>
+              <button
+                class="Button Button--large Button--text"
+                type="button"
+                data-state="pressed"
+              >
+                <span class="Button__label">Pressed</span>
+              </button>
+            </div>
+            <div>
+              <span class="Content__Caption">Text · Disabled</span>
+              <button class="Button Button--large Button--text" type="button" disabled>
+                <span class="Button__label">Disabled</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Radius Tokens</h2>
+      <div class="radius-grid">
+        <div class="radius-box" style="border-radius: var(--radius-none)">
+          --radius-none
+        </div>
+        <div class="radius-box" style="border-radius: var(--radius-extra-small)">
+          --radius-extra-small
+        </div>
+        <div class="radius-box" style="border-radius: var(--radius-small)">
+          --radius-small
+        </div>
+        <div class="radius-box" style="border-radius: var(--radius-medium)">
+          --radius-medium
+        </div>
+        <div class="radius-box" style="border-radius: var(--radius-large)">
+          --radius-large
+        </div>
+        <div class="radius-box" style="border-radius: var(--radius-extra-large)">
+          --radius-extra-large
+        </div>
+        <div class="radius-box" style="border-radius: var(--radius-full)">
+          --radius-full
+        </div>
+      </div>
+      <p class="Content__Caption">
+        Corner smoothing: <strong>var(--radius-corner-smoothing)</strong>
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Icons</h2>
+      <div class="icons-grid">
+        <span class="material-symbols-sharp Icons__Large">star</span>
+        <span class="material-symbols-sharp Icons__Medium">favorite</span>
+        <span class="material-symbols-sharp Icons__Small">bolt</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Effects</h2>
+      <div class="effects-grid">
+        <div class="effect-box InputShadow">
+          <p class="Content__Title">Input Shadow</p>
+          <p class="Content__Body">
+            Adds a soft drop shadow for elevated controls or input surfaces.
+          </p>
+        </div>
+        <div class="effect-box Glass">
+          <p class="Content__Title">Glass</p>
+          <p class="Content__Body">
+            Transparent glassmorphism background with subtle border and shadow.
+          </p>
+        </div>
+        <div class="effect-box Blur">
+          <p class="Content__Title">Blur</p>
+          <p class="Content__Body">
+            Applies a background blur to create depth for overlay elements.
+          </p>
+        </div>
+        <div class="effect-box ButtonGlow">
+          <p class="Content__Title">Button Glow</p>
+          <p class="Content__Body">
+            Strong radial glow to accent primary call-to-action buttons.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
